@@ -1,0 +1,21 @@
+.app-bar {
+  background-color: var(--blue) !important;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-width: 25%;
+}
+
+.scrolled {
+  /* add styles for scrolled state if needed */
+}
