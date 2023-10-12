@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   AppBar,
   Toolbar,
@@ -9,11 +9,10 @@ import {
   Drawer,
   List,
   ListItem,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import "./Header.css";
-import logo from "./img/logo.png";
-
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import './Header.css';
+import logo from './img/logo2.png';
 
 export default function Header() {
   const [mobileView, setMobileView] = React.useState(false);
@@ -28,9 +27,9 @@ export default function Header() {
 
   React.useEffect(() => {
     handleResize();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   React.useEffect(() => {
@@ -41,10 +40,10 @@ export default function Header() {
       }
     };
 
-    document.addEventListener("scroll", handleScroll);
+    document.addEventListener('scroll', handleScroll);
     return () => {
       // clean up the event listener
-      document.removeEventListener("scroll", handleScroll);
+      document.removeEventListener('scroll', handleScroll);
     };
   }, [scrolled]);
 
@@ -53,24 +52,40 @@ export default function Header() {
 
   const displayDesktop = () => {
     return (
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Button color="inherit">Home</Button>
-        <Button color="inherit">About Us</Button>
-        {/* <Button color="inherit">Services</Button> */}
-        <Button color="inherit">Galleries</Button>
-        <Button color="inherit">Testimonials</Button>
-        {/* <Button color="inherit">FAQ</Button> */}
-        <Button color="inherit">Contact</Button>
-      </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'center', marginRight: '25px' }}>
+      <Button 
+        className="myButton"
+        color='inherit' 
+        style={{ textTransform: 'none', fontSize: '18px', fontFamily: 'martel sans', marginRight: '25px' }}
+      >
+        about
+      </Button>
+      <Button 
+        className="myButton"
+        color='inherit' 
+        style={{ textTransform: 'none', fontSize: '18px', fontFamily: 'martel sans', marginRight: '25px' }}
+      >
+        gallery
+      </Button>
+      <Button 
+        className="myButton"
+        color='inherit' 
+        style={{ textTransform: 'none', fontSize: '18px', fontFamily: 'martel sans', marginRight: '25px' }}
+      >
+        contact
+      </Button>
+    </Box>
+    
+    
     );
   };
 
   const displayMobile = () => {
     return (
       <IconButton
-        edge="start"
-        color="inherit"
-        aria-label="menu"
+        edge='start'
+        color='inherit'
+        aria-label='menu'
         onClick={handleDrawerOpen}
       >
         <MenuIcon />
@@ -78,28 +93,27 @@ export default function Header() {
     );
   };
 
-  let appBarClasses = "app-bar";
+  let appBarClasses = 'app-bar';
   if (scrolled) {
-    appBarClasses += " scrolled";
+    appBarClasses += ' scrolled';
   }
 
   return (
-    <AppBar position="sticky" className={`app-bar ${scrolled ? 'scrolled' : ''}`}>
-      <Toolbar className="toolbar">
-        <Box className="logo-container">
-          <img src={logo} alt="Company Logo" className="logo"/>
-        </Box>
-        {mobileView ? displayMobile() : displayDesktop()}
-      </Toolbar>
-      <Drawer
-        anchor="top"
-        open={drawerOpen}
-        onClose={handleDrawerClose}
-      >
-        <List>
-          {/* ... */}
-        </List>
-      </Drawer>
-    </AppBar>
+    <AppBar position='sticky' className={`app-bar ${scrolled ? 'scrolled' : ''}`}>
+    <Toolbar className='toolbar'>
+      <Box className='logo-container' sx={{ display: 'flex', alignItems: 'center',  }}>
+        <img src={logo} alt='Company Logo' style={{ width: '100px' }} />
+        <Typography variant='h6' color='inherit' sx={{ marginLeft: '8px', fontSize: '28px', fontFamily: 'martel sans' }}>
+          blue cactus
+        </Typography>
+      </Box>
+      {mobileView ? displayMobile() : displayDesktop()}
+    </Toolbar>
+    <Drawer anchor='top' open={drawerOpen} onClose={handleDrawerClose}>
+      <List></List>
+    </Drawer>
+  </AppBar>
+  
+  
   );
 }

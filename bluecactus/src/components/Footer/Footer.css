@@ -1,0 +1,25 @@
+.footer {
+  text-align: center;
+  padding: 20px; /* Adjust as needed */
+  background-color: var(--white);
+  color: var(--black);
+  font-family: 'Martel Sans', sans-serif;
+  font-size: 16px;
+}
+
+.footer-link {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .footer {
+    font-size: 10px;
+  }
+}

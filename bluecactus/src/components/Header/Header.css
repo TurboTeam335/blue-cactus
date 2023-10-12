@@ -1,5 +1,5 @@
 .app-bar {
-  background-color: var(--blue) !important;
+  background-color: var(--headerBlue) !important;
 }
 
 .toolbar {
@@ -13,9 +13,46 @@
 }
 
 .logo {
-  max-width: 25%;
+  height: 100px;
+  width: auto;
 }
 
 .scrolled {
   /* add styles for scrolled state if needed */
 }
+
+.myButton {
+  position: relative;
+}
+
+.myButton:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.myButton:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.myButton:hover::after {
+  width: 100%;
+}
+
+.myButton::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;  
+  background-color: var(--white); 
+  transition: width 0.3s ease-in-out;
+}
+
+
+.myButton:active {
+  color: #0e4c95; 
+}
+
