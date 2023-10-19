@@ -1,18 +1,9 @@
 import * as React from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Box,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Toolbar } from '@mui/material';
 import './Header.css';
-import logo from './img/logo2.png';
+import Logo from './Logo';
+import DesktopMenu from './DesktopMenu';
+import MobileMenu from './MobileMenu';
 
 export default function Header() {
   const [mobileView, setMobileView] = React.useState(false);
@@ -50,70 +41,12 @@ export default function Header() {
   const handleDrawerOpen = () => setDrawerOpen(true);
   const handleDrawerClose = () => setDrawerOpen(false);
 
-  const displayDesktop = () => {
-    return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginRight: '25px' }}>
-      <Button 
-        className="myButton"
-        color='inherit' 
-        style={{ textTransform: 'none', fontSize: '18px', fontFamily: 'martel sans', marginRight: '25px' }}
-      >
-        about
-      </Button>
-      <Button 
-        className="myButton"
-        color='inherit' 
-        style={{ textTransform: 'none', fontSize: '18px', fontFamily: 'martel sans', marginRight: '25px' }}
-      >
-        gallery
-      </Button>
-      <Button 
-        className="myButton"
-        color='inherit' 
-        style={{ textTransform: 'none', fontSize: '18px', fontFamily: 'martel sans', marginRight: '25px' }}
-      >
-        contact
-      </Button>
-    </Box>
-    
-    
-    );
-  };
-
-  const displayMobile = () => {
-    return (
-      <IconButton
-        edge='start'
-        color='inherit'
-        aria-label='menu'
-        onClick={handleDrawerOpen}
-      >
-        <MenuIcon />
-      </IconButton>
-    );
-  };
-
-  let appBarClasses = 'app-bar';
-  if (scrolled) {
-    appBarClasses += ' scrolled';
-  }
-
   return (
     <AppBar position='sticky' className={`app-bar ${scrolled ? 'scrolled' : ''}`}>
-    <Toolbar className='toolbar'>
-      <Box className='logo-container' sx={{ display: 'flex', alignItems: 'center',  }}>
-        <img src={logo} alt='Company Logo' style={{ width: '100px' }} />
-        <Typography variant='h6' color='inherit' sx={{ marginLeft: '8px', fontSize: '28px', fontFamily: 'martel sans' }}>
-          blue cactus
-        </Typography>
-      </Box>
-      {mobileView ? displayMobile() : displayDesktop()}
-    </Toolbar>
-    <Drawer anchor='top' open={drawerOpen} onClose={handleDrawerClose}>
-      <List></List>
-    </Drawer>
-  </AppBar>
-  
-  
+      <Toolbar className='toolbar'>
+        <Logo />
+        {mobileView ? <MobileMenu handleDrawerOpen={handleDrawerOpen} /> : <DesktopMenu />}
+      </Toolbar>
+    </AppBar>
   );
 }
