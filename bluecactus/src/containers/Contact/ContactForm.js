@@ -37,38 +37,41 @@ const ContactForm = () => {
     validationSchema: validationSchema,
     onSubmit: values => {
       emailjs
-        .sendForm(
-          'YOUR_SERVICE_ID',
-          'YOUR_TEMPLATE_ID',
-          form.current,
-          'YOUR_PUBLIC_KEY'
-        )
-        .then(
-          result => {
-            console.log(result.text);
-          },
-          error => {
-            console.log(error.text);
-          }
-        );
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        result => {
+          console.log('EmailJS result', result.text);
+        },
+        error => {
+          console.log('EmailJS error', error.text);
+        }
+      );
     },
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+<form ref={form} onSubmit={formik.handleSubmit}>
       <Grid container spacing={2} justifyContent='center'>
         <Grid item xs={12} sm={5}>
           <TextField
             fullWidth
             id='name'
             name='name'
-            label='Name'
+            label='name'
             variant='filled'
             sx={{
               mt: 2,
               width: { xs: '70vw', sm: '31.5vw' },
               backgroundColor: 'white',
               borderRadius: 1,
+            }}
+            InputProps={{
+              disableUnderline: true,
             }}
             value={formik.values.name}
             onChange={formik.handleChange}
@@ -79,13 +82,16 @@ const ContactForm = () => {
             fullWidth
             id='email'
             name='email'
-            label='Email'
+            label='email'
             variant='filled'
             sx={{
               mt: 2,
               width: { xs: '70vw', sm: '31.5vw' },
               backgroundColor: 'white',
               borderRadius: 1,
+            }}
+            InputProps={{
+              disableUnderline: true,
             }}
             value={formik.values.email}
             onChange={formik.handleChange}
@@ -96,13 +102,16 @@ const ContactForm = () => {
             fullWidth
             id='phone'
             name='phone'
-            label='Phone'
+            label='phone'
             variant='filled'
             sx={{
               mt: 2,
               width: { xs: '70vw', sm: '31.5vw' },
               backgroundColor: 'white',
               borderRadius: 1,
+            }}
+            InputProps={{
+              disableUnderline: true,
             }}
             value={formik.values.phone}
             onChange={formik.handleChange}
@@ -115,7 +124,7 @@ const ContactForm = () => {
             fullWidth
             id='message'
             name='message'
-            label='Message'
+            label='message'
             multiline
             rows={7.5}
             variant='filled'
@@ -124,6 +133,9 @@ const ContactForm = () => {
               width: { xs: '70vw', sm: '31.5vw' },
               backgroundColor: 'white',
               borderRadius: 1,
+            }}
+            InputProps={{
+              disableUnderline: true,
             }}
             value={formik.values.message}
             onChange={formik.handleChange}

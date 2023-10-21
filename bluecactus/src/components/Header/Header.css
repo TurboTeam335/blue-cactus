@@ -1,5 +1,16 @@
-.app-bar {
+.app-bar.top {
+  transition: background-color 0.5s ease, color 0.5s ease;
+  background-color: var(--white) !important;
+  color: var(--blue) !important;
+}
+
+.app-bar.scrolled {
+  transition: background-color 0.5s ease, color 0.5s ease;
   background-color: var(--headerBlue) !important;
+  color: var(--white) !important;
+}
+.app-bar.top .myButton:hover::after {
+  background-color: var(--blue);
 }
 
 .toolbar {

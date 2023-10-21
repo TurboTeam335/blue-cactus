@@ -44,7 +44,7 @@ export default function Header() {
   return (
     <AppBar
       position='sticky'
-      className={`app-bar ${scrolled ? 'scrolled' : ''}`}
+      className={`app-bar ${scrolled ? 'scrolled' : 'top'}`}
     >
       <Toolbar className='toolbar'>
         <Logo />

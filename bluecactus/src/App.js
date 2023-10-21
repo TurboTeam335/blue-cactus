@@ -15,10 +15,10 @@ function App() {
       <Element name="top" />
       <Header />
       <HeroSection />
-      <Element name="about"><div style={{ paddingTop: '98px' }}><About /></div></Element>
-      <Element name="gallery"><div style={{ paddingTop: '64px' }}><Gallery /></div></Element>
-      <Element name="contact"><div style={{ paddingTop: '58px' }}><Contact /></div></Element>
-      <Element name="follow"><div style={{ paddingTop: '98px' }}><Follow /></div></Element>
+      <Element name="about"><div ><About /></div></Element>
+      <Element name="gallery"><div ><Gallery /></div></Element>
+      <Element name="contact"><Contact /></Element>
+      <Element name="follow"><div><Follow /></div></Element>
       <Footer />
     </div>
   );
