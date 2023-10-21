@@ -1,30 +1,72 @@
 import * as React from 'react';
 import { Box, Button } from '@mui/material';
+import { Link } from 'react-scroll';
 
 export default function DesktopMenu() {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', marginRight: '25px' }}>
-      <Button 
-        className="myButton"
-        color='inherit' 
-        style={{ textTransform: 'none', fontSize: '18px', fontFamily: 'martel sans', marginRight: '25px' }}
+    <Box
+      sx={{ display: 'flex', justifyContent: 'center', marginRight: '25px' }}
+    >
+      <Link
+        className='myButton'
+        to='about'
+        smooth={true}
+        duration={100}
+        style={{
+          textTransform: 'none',
+          fontSize: '18px',
+          fontFamily: 'martel sans',
+          marginRight: '25px',
+          cursor: 'pointer',
+        }}
       >
         about
-      </Button>
-      <Button 
-        className="myButton"
-        color='inherit' 
-        style={{ textTransform: 'none', fontSize: '18px', fontFamily: 'martel sans', marginRight: '25px' }}
+      </Link>
+      <Link
+        className='myButton'
+        to='gallery'
+        smooth={true}
+        duration={100}
+        style={{
+          textTransform: 'none',
+          fontSize: '18px',
+          fontFamily: 'martel sans',
+          marginRight: '25px',
+          cursor: 'pointer',
+        }}
       >
         gallery
-      </Button>
-      <Button 
-        className="myButton"
-        color='inherit' 
-        style={{ textTransform: 'none', fontSize: '18px', fontFamily: 'martel sans', marginRight: '25px' }}
+      </Link>
+      <Link
+        className='myButton'
+        to='contact'
+        smooth={true}
+        duration={100}
+        style={{
+          textTransform: 'none',
+          fontSize: '18px',
+          fontFamily: 'martel sans',
+          marginRight: '25px',
+          cursor: 'pointer',
+        }}
       >
         contact
-      </Button>
+      </Link>
+      <Link
+        className='myButton'
+        to='follow'
+        smooth={true}
+        duration={100}
+        style={{
+          textTransform: 'none',
+          fontSize: '18px',
+          fontFamily: 'martel sans',
+          marginRight: '25px',
+          cursor: 'pointer',
+        }}
+      >
+        follow
+      </Link>
     </Box>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Element } from 'react-scroll';
 import Header from './components/Header/Header';
 import HeroSection from './components/HeroSection/HeroSection';
 import About from './containers/About/About';
@@ -11,12 +12,13 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
     <div className="App">
+      <Element name="top" />
       <Header />
       <HeroSection />
-      <About />
-      <Gallery />
-      <Contact />
-      <Follow />
+      <Element name="about"><div style={{ paddingTop: '98px' }}><About /></div></Element>
+      <Element name="gallery"><div style={{ paddingTop: '64px' }}><Gallery /></div></Element>
+      <Element name="contact"><div style={{ paddingTop: '58px' }}><Contact /></div></Element>
+      <Element name="follow"><div style={{ paddingTop: '98px' }}><Follow /></div></Element>
       <Footer />
     </div>
   );

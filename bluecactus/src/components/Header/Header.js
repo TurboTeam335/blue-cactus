@@ -42,10 +42,21 @@ export default function Header() {
   const handleDrawerClose = () => setDrawerOpen(false);
 
   return (
-    <AppBar position='sticky' className={`app-bar ${scrolled ? 'scrolled' : ''}`}>
+    <AppBar
+      position='sticky'
+      className={`app-bar ${scrolled ? 'scrolled' : ''}`}
+    >
       <Toolbar className='toolbar'>
         <Logo />
-        {mobileView ? <MobileMenu handleDrawerOpen={handleDrawerOpen} /> : <DesktopMenu />}
+        {mobileView ? (
+          <MobileMenu
+            handleDrawerOpen={handleDrawerOpen}
+            drawerOpen={drawerOpen}
+            handleDrawerClose={handleDrawerClose}
+          />
+        ) : (
+          <DesktopMenu />
+        )}
       </Toolbar>
     </AppBar>
   );
