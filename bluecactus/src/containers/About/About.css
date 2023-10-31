@@ -1,7 +1,16 @@
-.about-section {
+.about-container {
+
+}
+
+
+.about-section section {
+  position: relative;
   background-color: #ecebe8;
   font-family: 'Martel Sans', sans-serif;
   height: 520px;
+  display: flex;
+  align-items: center; /* This will center the children vertically */
+  justify-content: center; 
 }
 
 .about-title {

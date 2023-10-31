@@ -94,7 +94,7 @@ const Gallery = () => {
         width={{ xs: '100%', sm: '100%' }}
         mx='auto'
         bgcolor='#f3f2f2'
-        style={{ zIndex: 2, backgroundColor: "#f3f2f2" }}
+        style={{ zIndex: 2, backgroundColor: "#f3f2f2", }}
       >
         <Slider {...settings}>
           {images.map((image, index) => (
@@ -102,7 +102,7 @@ const Gallery = () => {
               <img
                 src={image}
                 alt={`Gallery ${index}`}
-                style={{ width: '100%', height: 'auto' }}
+                style={{ width: '100%', height: 'auto',  paddingBottom: '20px'  }}
               />
             </div>
           ))}

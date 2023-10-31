@@ -1,0 +1,62 @@
+/* Enter from the right */
+.slide-enter, .slide-from-left-enter {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.slide-enter-active, .slide-from-left-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: opacity 300ms, transform 600ms;
+}
+
+/* Enter from the left */
+.slide-from-left-enter {
+  transform: translateX(-100%);
+}
+.slide-from-left-enter-active {
+  transform: translateX(0);
+  transition: opacity 300ms, transform 600ms;
+}
+
+/* For exiting pages, ensure you have classes that match these */
+.slide-exit, .slide-from-left-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: opacity 100ms, transform 300ms;
+}
+
+.slide-from-left-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+.slide-from-left-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: opacity 100ms, transform 300ms;
+}
+
+/* ... existing styles ... */
+
+/* ... existing styles ... */
+
+/* New styles for fade-in animations */
+.fade-in.title {
+  opacity: 0;
+  transition: opacity 1200ms ease-in-out 300ms; /* Apply delay for title */
+}
+
+.fade-in.paragraph {
+  opacity: 0;
+  transition: opacity 1200ms ease-in-out 900ms; /* Apply delay for paragraph */
+}
+
+/* When the parent container has the .slide-enter-done class, start the animation */
+.slide-enter-done .fade-in.title,
+.slide-enter-done .fade-in.paragraph {
+  opacity: 1;
+}
+

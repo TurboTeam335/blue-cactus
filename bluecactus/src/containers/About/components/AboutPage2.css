@@ -1,0 +1,23 @@
+/* Styles specific to layout2 */
+.layout2.text-container {
+  align-items: center;
+  height: auto;
+  padding: 0 65px;
+}
+
+.layout2.img-container {
+  align-items: flex-end;  
+  height: 335px;
+}
+
+.layout2 .about-img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.layout2 .title {
+  text-align: end; 
+}
+
+/* You can remove .layout2 prefixes since this file is specific to layout2 */

@@ -1,72 +1,72 @@
 import React from 'react';
-import './Page.css';
-import { Grid, Typography } from '@mui/material';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import './PageTransition.css'; // You will create this CSS file
+import AboutPage1 from './AboutPage1';
+import AboutPage2 from './AboutPage2';
+import AboutPage3 from './AboutPage3';
+import AboutPage4 from './AboutPage4';
 
-const Page = ({ imgSrc, title, paragraph, layoutType }) => {
+const Page = ({ page, direction }) => {
+  const { imgSrc, title, paragraph, layoutType } = page;
+
+  const pageComponent = () => {
+    switch (layoutType) {
+      case 'layout1':
+        return (
+          <AboutPage1
+            className='fade-in'
+            imgSrc={imgSrc}
+            title={title}
+            paragraph={paragraph}
+          />
+        );
+      case 'layout2':
+        return (
+          <AboutPage2
+            className='fade-in'
+            imgSrc={imgSrc}
+            title={title}
+            paragraph={paragraph}
+          />
+        );
+      case 'layout3':
+        return (
+          <AboutPage3
+            className='fade-in'
+            imgSrc={imgSrc}
+            title={title}
+            paragraph={paragraph}
+          />
+        );
+      case 'layout4':
+        return (
+          <AboutPage4
+            className='fade-in'
+            imgSrc={imgSrc}
+            title={title}
+            paragraph={paragraph}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
-    <Grid container className='page-container'>
-      {layoutType === 'layout1' && (
-        <>
-          <Grid item xs={12} md={6} className='text-container'>
-            <Typography variant='h4' className='about-us'>
-              about us
-            </Typography>
-            <hr className='underline' /> {/* Add this line back */}
-            <Typography variant='h2' className='title'>
-              {title}
-            </Typography>
-            <Typography variant='body1' className='paragraph'>
-              {paragraph}
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={6} className='img-container'>
-            <img src={imgSrc} alt='About us' className='about-img' />
-          </Grid>
-        </>
-      )}
-      
-      {layoutType === 'layout2' && (
-        <>
-          <Grid item xs={12} className='text-container layout2'>
-            {/* <Typography variant='h4' className='about-us'>
-              about us
-            </Typography>
-            <hr className='underline' /> */}
-            <Typography variant='h2' className='title'>
-              {title}
-            </Typography>
-            <Typography variant='body1' className='paragraph'>
-              {paragraph}
-            </Typography>
-          </Grid>
-          <Grid item xs={12} className='img-container layout2'>
-            <img src={imgSrc} alt='About us' className='about-img layout2' />
-          </Grid>
-        </>
-      )}
-
-{layoutType === 'layout3' && (
-        <>
-          <Grid item xs={12} md={6} className='img-container layout3'>
-            <img src={imgSrc} alt='About us' className='about-img layout3' />
-          </Grid>
-          <Grid item xs={12} md={6} className='text-container layout3'>
-            {/* <Typography variant='h4' className='about-us layout3'>
-              about us
-            </Typography>
-            <hr className='underline layout3' /> */}
-            <Typography variant='h2' className='title layout3'>
-              {title}
-            </Typography>
-            <Typography variant='body1' className='paragraph layout3'>
-              {paragraph}
-            </Typography>
-          </Grid>
-        </>
-      )}
-    </Grid>
+    <div className='slide-container'>
+      <TransitionGroup>
+        <CSSTransition
+          key={page.layoutType}
+          in={true} // This should always be true as each page component mounts
+          appear={true} 
+          timeout={300}
+          classNames={direction === 'right' ? 'slide' : 'slide-from-left'}
+        >
+          <div className='slide'>{pageComponent()}</div>
+        </CSSTransition>
+      </TransitionGroup>
+    </div>
   );
 };
 
 export default Page;
-
