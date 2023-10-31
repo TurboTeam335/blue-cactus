@@ -20,4 +20,21 @@
   text-align: end; 
 }
 
-/* You can remove .layout2 prefixes since this file is specific to layout2 */
+@media (max-width: 768px) {
+  .layout2 .text-container {
+    padding: 4% 30px;
+  }
+
+  .layout2 .title {
+    font-size: 28px;
+  }
+
+  .layout2 .paragraph {
+    font-size: 14px;
+  }
+
+  .layout2 .about-img {
+    height: 150px;
+  }
+}
+

@@ -1,15 +1,10 @@
-.about-container {
-
-}
-
-
 .about-section section {
   position: relative;
   background-color: #ecebe8;
   font-family: 'Martel Sans', sans-serif;
   height: 520px;
   display: flex;
-  align-items: center; /* This will center the children vertically */
+  align-items: center; 
   justify-content: center; 
 }
 
@@ -28,7 +23,6 @@
   font-size: 18px;
 }
 
-/* Media queries for mobile */
 @media (max-width: 768px) {
   .about-title {
     font-size: 12px;

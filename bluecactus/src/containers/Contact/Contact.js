@@ -7,13 +7,12 @@ const Contact = () => {
   return (
     <Box
       textAlign='center'
-      mt={5}
+
       bgcolor='#ECEBE8'
       style={{ zIndex: 2, overflow: 'hidden' }}
     >
       <Typography
         variant='h4'
-        gutterBottom
         sx={{
           mt: 4,
           fontSize: { xs: '12px', sm: '18px' },
@@ -31,7 +30,6 @@ const Contact = () => {
         mb={5}
       />
       <ContactForm />
-
     </Box>
   );
 };

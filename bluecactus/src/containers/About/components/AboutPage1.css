@@ -1,6 +1,6 @@
 .page-container {
-  background-color: #ECEBE8;
-  color: #19191A;
+  background-color: #ecebe8;
+  color: #19191a;
   font-family: 'Martel Sans', sans-serif;
 }
 
@@ -22,8 +22,6 @@
   object-fit: cover;
 }
 
-
-
 .title {
   color: rgba(25, 25, 26, 0.4);
   font-size: 50px;
@@ -39,17 +37,22 @@
   padding-left: 15%;
 }
 
-
 @media (max-width: 768px) {
-  .about-img {
-    height: auto; 
+  body .about-img {
+    height: 100%;
+    max-width: 100%;
   }
 
-  .title {
-    font-size: 22px;
+  body .title {
+    font-size: 28px;
+    padding-left: 10%;
   }
 
-  .paragraph {
-    font-size: 12px;
+  body .paragraph {
+    font-size: 14px;
+    padding-left: 10%;
+
   }
+
+
 }

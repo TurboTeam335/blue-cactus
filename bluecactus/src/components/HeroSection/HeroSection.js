@@ -1,8 +1,6 @@
 import React from 'react';
 import './HeroSection.css';
 import hero from './img/hero.JPG'
-// import hero from './img/glasses.JPG'
-
 
 const HeroSection = () => {
   return (

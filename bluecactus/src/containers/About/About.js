@@ -56,7 +56,7 @@ const About = () => {
   return (
     <Box
       sx={{
-        backgroundColor: '#ecebe8', // This sets the background color
+        backgroundColor: '#ecebe8', 
       }}
     >
       <div className='about-section'>

@@ -26,11 +26,10 @@ import img20 from './img/img1.jpg';
 import img21 from './img/img21.jpg';
 
 const Gallery = () => {
-  // Image array - replace 'image1.jpg', 'image2.jpg', etc. with the actual paths to your images
   const images = [
     img1,
     img2,
-    img3,
+    // img3,
     img4,
     img5,
     img6,
@@ -64,13 +63,12 @@ const Gallery = () => {
   return (
     <Box
       textAlign='center'
-      mt={5}
+    
       bgcolor='#f3f2f2'
       style={{ zIndex: 2, overflow: 'hidden', backgroundColor: '#f3f2f2' }}
     >
       <Typography
         variant='h4'
-        gutterBottom
         sx={{
           mt: 4,
           fontSize: { xs: '12px', sm: '18px' },
@@ -88,28 +86,41 @@ const Gallery = () => {
         mb={5}
       />
 
-      <Box
-        maxHeight='65vh'
+<Box
+        maxHeight={{ xs: '40vh', sm: '75vh' }}
         maxWidth='125vh'
-        width={{ xs: '100%', sm: '100%' }}
+        width={{ xs: '90%', sm: '100%' }}
         mx='auto'
         bgcolor='#f3f2f2'
-        style={{ zIndex: 2, backgroundColor: "#f3f2f2", }}
+        sx={{
+          zIndex: 2,
+          backgroundColor: "#f3f2f2",
+          
+          px: { xs: 3, sm: 0 },
+        }}
       >
-        <Slider {...settings}>
-          {images.map((image, index) => (
-            <div key={index}>
-              <img
-                src={image}
-                alt={`Gallery ${index}`}
-                style={{ width: '100%', height: 'auto',  paddingBottom: '20px'  }}
-              />
-            </div>
-          ))}
-        </Slider>
+    <Slider {...settings}>
+  {images.map((image, index) => (
+    <div key={index}>
+      <Box
+        component="img"
+        sx={{
+          width: '100%',
+          height: { xs: '50vh', sm: '70vh' }, 
+          objectFit: 'cover',
+          paddingBottom: '20px'
+        }}
+        src={image}
+        alt={`Gallery ${index}`}
+      />
+    </div>
+  ))}
+</Slider>
+
       </Box>
     </Box>
   );
 };
 
 export default Gallery;
+

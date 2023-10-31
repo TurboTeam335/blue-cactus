@@ -5,7 +5,6 @@ const SectionHeader = () => {
     <Box textAlign='center' mt={5} bgcolor='#ECEBE8'>
       <Typography
         variant='h4'
-        gutterBottom
         sx={{
           pt: 4,
           fontSize: { xs: '12px', sm: '18px' },

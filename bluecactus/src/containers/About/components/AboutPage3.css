@@ -1,21 +1,51 @@
-/* Styles specific to layout3 */
-.layout3.text-container {
-  align-items: flex-start;
-  justify-content: center;
-  padding: 65px;
+/* Assuming .layout3 is the class for the page-container */
+.layout3 .page-container {
+  background-color: #ecebe8;
+  color: #19191a;
+  font-family: 'Martel Sans', sans-serif;
 }
 
-.layout3.img-container {
+.layout3 .img-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  order: -1;
+  align-items: center;
 }
 
 .layout3 .about-img {
   width: 100%;
-  height: 520px;
+  height: auto;
   object-fit: cover;
 }
 
-/* Again, remove .layout3 prefixes and add styles for about-us, title, paragraph if needed */
+.layout3 .title {
+  color: rgba(25, 25, 26, 0.4);
+  font-size: 50px;
+  text-align: left;
+  padding-left: 15%;
+  padding-bottom: 20px;
+}
+
+.layout3 .paragraph {
+  font-size: 18px;
+  text-align: left;
+  color: rgba(25, 25, 26, 0.7);
+  padding-left: 15%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .layout3 .about-img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .layout3 .title {
+    font-size: 28px;
+    padding-left: 10%;
+  }
+
+  .layout3 .paragraph {
+    font-size: 14px;
+    padding-left: 10%;
+  }
+}

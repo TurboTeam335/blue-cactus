@@ -7,7 +7,7 @@ import Gallery from './containers/Gallery/Gallery';
 import Contact from './containers/Contact/Contact';
 import Follow from './containers/Follow/Follow';
 import Footer from './components/Footer/Footer';
-// Import other sections as needed
+
 
 function App() {
   return (
