@@ -75,7 +75,7 @@ const Gallery = () => {
           fontFamily: "'Martel Sans', sans-serif",
         }}
       >
-        galleries
+        gallery
       </Typography>
       <Box
         className='underline'

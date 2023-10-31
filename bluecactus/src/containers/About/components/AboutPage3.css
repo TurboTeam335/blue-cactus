@@ -41,11 +41,11 @@
 
   .layout3 .title {
     font-size: 28px;
-    padding-left: 10%;
+    padding-right: 10%;
   }
 
   .layout3 .paragraph {
     font-size: 14px;
-    padding-left: 10%;
+    padding-right: 17%;
   }
 }

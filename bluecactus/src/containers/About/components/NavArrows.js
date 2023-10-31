@@ -15,7 +15,7 @@ const NavArrows = ({ onNext, onPrev }) => {
     };
     
     window.addEventListener('resize', updateSize);
-    updateSize(); // also set size on mount
+    updateSize(); 
     
     return () => window.removeEventListener('resize', updateSize);
   }, []);
@@ -26,8 +26,8 @@ const NavArrows = ({ onNext, onPrev }) => {
     color: 'var(--white)',
     pointerEvents: 'auto',
     transition: 'background-color 0.3s ease, color 0.3s ease',
-    // You can add size change based on isMobile state
-    fontSize: isMobile ? '1rem' : '2.5rem' // Adjust font size for mobile here
+
+    fontSize: isMobile ? '.75rem' : '2.5rem' 
   };
 
   const arrowHoverStyle = {
@@ -45,7 +45,7 @@ const NavArrows = ({ onNext, onPrev }) => {
       position: 'absolute',
       top: '50%',
       left: '50%',
-      transform: isMobile ? 'translate(-50%, 700%)' : 'translate(-50%, 775%)', // Adjust for mobile
+      transform: isMobile ? 'translate(-50%, 600%)' : 'translate(-50%, 775%)', // Adjust for mobile
       width: '100%',
       display: 'flex',
       justifyContent: 'space-between',

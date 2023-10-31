@@ -8,19 +8,19 @@ const AboutPage3 = ({ imgSrc, title, paragraph, className }) => {
     <div className='page-container'>
       <SectionHeader />
       <Grid container spacing={2}>
-        <Grid item xs={6} md={6} className='img-container'>
+        <Grid item xs={5} md={6} className='img-container'>
           <img src={imgSrc} alt='About us' className='about-img' />
         </Grid>
 
         <Grid
           item
-          xs={6}
+          xs={7}
           md={6}
           sx={{
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            p: 1, // Adjust padding as needed
+            p: 1, 
           }}
         >
           <Typography variant='h2' className={`${className} title`}>

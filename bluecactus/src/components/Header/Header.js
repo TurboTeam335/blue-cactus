@@ -33,7 +33,6 @@ export default function Header() {
 
     document.addEventListener('scroll', handleScroll);
     return () => {
-      // clean up the event listener
       document.removeEventListener('scroll', handleScroll);
     };
   }, [scrolled]);

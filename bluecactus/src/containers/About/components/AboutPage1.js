@@ -10,7 +10,7 @@ const AboutPage1 = ({ imgSrc, title, paragraph, className }) => {
       <Grid container spacing={2}>
   <Grid
     item
-    xs={6} 
+    xs={7} 
     md={6}
     sx={{
       display: 'flex',
@@ -27,7 +27,7 @@ const AboutPage1 = ({ imgSrc, title, paragraph, className }) => {
     </Typography>
   </Grid>
 
-  <Grid item xs={6} md={6} className='img-container'> {/* similarly, xs={6} */}
+  <Grid item xs={5} md={6} className='img-container'> {/* similarly, xs={6} */}
     <img src={imgSrc} alt='About us' className='about-img' />
   </Grid>
 </Grid>

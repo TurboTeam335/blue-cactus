@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { TextField, Button, Grid } from '@mui/material';
+import React, { useRef, useState } from 'react';
+import { TextField, Button, Grid, Typography } from '@mui/material';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import emailjs from '@emailjs/browser';
@@ -8,6 +8,7 @@ import styled from '@emotion/styled';
 const CustomButton = styled(Button)`
   background-color: #0e4c95 !important;
   transition: opacity 0.3s ease-in-out;
+  text-transform: none;
   &:hover {
     background-color: #0e4c95 !important;
     opacity: 0.8;
@@ -26,6 +27,8 @@ const validationSchema = yup.object({
 
 const ContactForm = () => {
   const form = useRef();
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -35,27 +38,34 @@ const ContactForm = () => {
       message: '',
     },
     validationSchema: validationSchema,
-    onSubmit: values => {
+    onSubmit: (values, { resetForm }) => {
+      setSubmitting(true);
       emailjs
-      .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        result => {
-          console.log('EmailJS result', result.text);
-        },
-        error => {
-          console.log('EmailJS error', error.text);
-        }
-      );
+        .sendForm(
+          process.env.REACT_APP_EMAILJS_SERVICE_ID,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+          form.current,
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          result => {
+            console.log('EmailJS result', result.text);
+            setFormSubmitted(true);
+            resetForm({});
+          },
+          error => {
+            console.log('EmailJS error', error.text);
+            // Optionally, handle the error state as well with a message
+          }
+        )
+        .finally(() => {
+          setSubmitting(false);
+        });
     },
   });
 
   return (
-<form ref={form} onSubmit={formik.handleSubmit}>
+    <form ref={form} onSubmit={formik.handleSubmit}>
       <Grid container spacing={2} justifyContent='center'>
         <Grid item xs={12} sm={5}>
           <TextField
@@ -66,7 +76,7 @@ const ContactForm = () => {
             variant='filled'
             sx={{
               mt: 2,
-              width: { xs: '70vw', sm: '31.5vw' },
+              width: { xs: '85vw', sm: '31.5vw' },
               backgroundColor: 'white',
               borderRadius: 1,
             }}
@@ -86,7 +96,7 @@ const ContactForm = () => {
             variant='filled'
             sx={{
               mt: 2,
-              width: { xs: '70vw', sm: '31.5vw' },
+              width: { xs: '85vw', sm: '31.5vw' },
               backgroundColor: 'white',
               borderRadius: 1,
             }}
@@ -106,7 +116,7 @@ const ContactForm = () => {
             variant='filled'
             sx={{
               mt: 2,
-              width: { xs: '70vw', sm: '31.5vw' },
+              width: { xs: '85vw', sm: '31.5vw' },
               backgroundColor: 'white',
               borderRadius: 1,
             }}
@@ -130,7 +140,7 @@ const ContactForm = () => {
             variant='filled'
             sx={{
               mt: 2,
-              width: { xs: '70vw', sm: '31.5vw' },
+              width: { xs: '85vw', sm: '31.5vw' },
               backgroundColor: 'white',
               borderRadius: 1,
             }}
@@ -148,10 +158,16 @@ const ContactForm = () => {
         variant='contained'
         fullWidth
         type='submit'
-        sx={{ mt: 3, mb: 3, width: 85 }}
+        sx={{ mt: 3, mb: 3, width: 5 }}
+        disabled={submitting || formSubmitted} 
       >
-        Send
+        send
       </CustomButton>
+      {formSubmitted && (
+        <Typography color='#0e4c95' gutterBottom>
+          Message sent successfully!
+        </Typography>
+      )}
     </form>
   );
 };

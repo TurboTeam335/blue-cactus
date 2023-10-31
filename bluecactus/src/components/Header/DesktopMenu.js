@@ -12,6 +12,7 @@ export default function DesktopMenu() {
         to='about'
         smooth={true}
         duration={100}
+        offset={-90} 
         style={{
           textTransform: 'none',
           fontSize: '18px',
@@ -27,6 +28,7 @@ export default function DesktopMenu() {
         to='gallery'
         smooth={true}
         duration={100}
+        offset={-90} 
         style={{
           textTransform: 'none',
           fontSize: '18px',
@@ -42,6 +44,7 @@ export default function DesktopMenu() {
         to='contact'
         smooth={true}
         duration={100}
+        offset={-90} 
         style={{
           textTransform: 'none',
           fontSize: '18px',
@@ -57,6 +60,7 @@ export default function DesktopMenu() {
         to='follow'
         smooth={true}
         duration={100}
+        offset={-90} 
         style={{
           textTransform: 'none',
           fontSize: '18px',
