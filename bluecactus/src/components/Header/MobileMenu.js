@@ -37,7 +37,7 @@ export default function MobileMenu({
               to='about'
               smooth={true}
               duration={100}
-              offset={-90} 
+              offset={-55} 
               style={{
                 textTransform: 'none',
                 fontSize: '16px',
@@ -56,7 +56,7 @@ export default function MobileMenu({
               to='gallery'
               smooth={true}
               duration={100}
-              offset={-90} 
+              offset={-55} 
               style={{
                 textTransform: 'none',
                 fontSize: '16px',
@@ -74,7 +74,7 @@ export default function MobileMenu({
               to='contact'
               smooth={true}
               duration={100}
-              offset={-90} 
+              offset={-55} 
               style={{
                 textTransform: 'none',
                 fontSize: '16px',
@@ -92,7 +92,7 @@ export default function MobileMenu({
               to='follow'
               smooth={true}
               duration={100}
-              offset={-90} 
+              offset={-55} 
               style={{
                 textTransform: 'none',
                 fontSize: '16px',
