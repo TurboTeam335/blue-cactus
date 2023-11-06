@@ -6,21 +6,21 @@ const SectionHeader = () => {
       <Typography
         variant='h4'
         sx={{
-          pt: 4,
+          py: 4,
           fontSize: { xs: '12px', sm: '18px' },
           fontFamily: "'Martel Sans', sans-serif",
         }}
       >
         about
       </Typography>
-      <Box
+      {/* <Box
         className='underline'
         width='3%'
         mx='auto'
         borderBottom={1}
         borderColor='grey.500'
         mb={5}
-      />
+      /> */}
     </Box>
   );
 };

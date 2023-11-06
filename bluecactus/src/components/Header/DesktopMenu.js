@@ -44,7 +44,7 @@ export default function DesktopMenu() {
         to='contact'
         smooth={true}
         duration={100}
-        offset={-90} 
+        offset={-111} 
         style={{
           textTransform: 'none',
           fontSize: '18px',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import './NavArrows.css'
 
 const NavArrows = ({ onNext, onPrev }) => {
   const [hoverPrev, setHoverPrev] = useState(false);
@@ -41,12 +42,12 @@ const NavArrows = ({ onNext, onPrev }) => {
   });
 
   return (
-    <div style={{ 
+    <div className="nav-arrow"
+    style={{ 
       position: 'absolute',
-      top: '50%',
+      top:  isMobile ? '90%' :'142%',
       left: '50%',
-      transform: isMobile ? 'translate(-50%, 600%)' : 'translate(-50%, 775%)', // Adjust for mobile
-      width: '100%',
+      transform:  'translate(-50%, -50%)',
       display: 'flex',
       justifyContent: 'space-between',
       zIndex: 2,

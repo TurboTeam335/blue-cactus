@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Box, IconButton, useMediaQuery } from '@mui/material'; // Import useMediaQuery
+import { Typography, Box, IconButton, useMediaQuery } from '@mui/material'; 
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
@@ -7,13 +7,13 @@ import './Follow.css'
 import bgImage from './background.png'
 
 const Follow = () => {
-  const matches = useMediaQuery('(max-width:900px)'); // Add this line
+  const matches = useMediaQuery('(max-width:900px)'); 
 
   return (
     <Box
       className="follow-background" 
       sx={{
-        height: matches ? '60vh' : '80vh',
+        height: matches ? '30vh' : '50vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -27,8 +27,8 @@ const Follow = () => {
           border: '3px solid #f3f2f2',
           padding: 2,
           borderRadius: 1,
-          width: matches ? '70vw' : '55vh', // Change this line
-          height: matches ? '25vh' : '25vh', // Change this line
+          width: matches ? '50vw' : '55vh', 
+          height: matches ? '15vh' : '25vh', 
           display: 'flex', 
           flexDirection: 'column', 
           alignItems: 'center', 

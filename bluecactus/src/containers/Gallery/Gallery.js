@@ -70,21 +70,22 @@ const Gallery = () => {
       <Typography
         variant='h4'
         sx={{
-          mt: 4,
+          my: 4,
+          
           fontSize: { xs: '12px', sm: '18px' },
           fontFamily: "'Martel Sans', sans-serif",
         }}
       >
         gallery
       </Typography>
-      <Box
+      {/* <Box
         className='underline'
         width='3%'
         mx='auto'
         borderBottom={1}
         borderColor='grey.500'
         mb={5}
-      />
+      /> */}
 
 <Box
         maxHeight={{ xs: '40vh', sm: '75vh' }}
@@ -96,7 +97,8 @@ const Gallery = () => {
           zIndex: 2,
           backgroundColor: "#f3f2f2",
           
-          px: { xs: 3, sm: 0 },
+          px: { xs: 3, sm: 2 },
+          pb: {xs: 9, sm: 6 },
         }}
       >
     <Slider {...settings}>

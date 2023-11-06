@@ -14,21 +14,21 @@ const Contact = () => {
       <Typography
         variant='h4'
         sx={{
-          mt: 4,
+          my: 4,
           fontSize: { xs: '12px', sm: '18px' },
           fontFamily: "'Martel Sans', sans-serif",
         }}
       >
         contact
       </Typography>
-      <Box
+      {/* <Box
         className='underline'
         width='3%'
         mx='auto'
         borderBottom={1}
         borderColor='grey.500'
         mb={5}
-      />
+      /> */}
       <ContactForm />
     </Box>
   );

@@ -6,7 +6,7 @@
 .slide-enter-active, .slide-from-left-enter-active {
   transform: translateX(0);
   opacity: 1;
-  transition: opacity 600ms, transform 600ms;
+  transition: opacity 300ms, transform 300ms;
 }
 
 /* Enter from the left */
@@ -15,7 +15,7 @@
 }
 .slide-from-left-enter-active {
   transform: translateX(0);
-  transition: opacity 300ms, transform 600ms;
+  transition: opacity 300ms, transform 300ms;
 }
 
 
@@ -26,7 +26,7 @@
 .slide-exit-active {
   transform: translateX(-100%);
   opacity: 0;
-  transition: opacity 600ms, transform 300ms;
+  transition: opacity 300ms, transform 300ms;
 }
 
 .slide-from-left-exit {
@@ -36,7 +36,7 @@
 .slide-from-left-exit-active {
   transform: translateX(100%);
   opacity: 0;
-  transition: opacity 600ms, transform 300ms;
+  transition: opacity 300ms, transform 300ms;
 }
 
 

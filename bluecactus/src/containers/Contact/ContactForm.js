@@ -15,15 +15,21 @@ const CustomButton = styled(Button)`
   }
 `;
 
+const phoneRegExp = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
+
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
   email: yup
     .string()
     .email('Enter a valid email')
     .required('Email is required'),
-  phone: yup.string().required('Phone number is required'),
+  phone: yup
+    .string()
+    .matches(phoneRegExp, 'Phone number is not valid')
+    .required('Phone number is required'),
   message: yup.string().required('Message is required'),
 });
+
 
 const ContactForm = () => {
   const form = useRef();
@@ -55,7 +61,6 @@ const ContactForm = () => {
           },
           error => {
             console.log('EmailJS error', error.text);
-            // Optionally, handle the error state as well with a message
           }
         )
         .finally(() => {
@@ -66,7 +71,7 @@ const ContactForm = () => {
 
   return (
     <form ref={form} onSubmit={formik.handleSubmit}>
-      <Grid container spacing={2} justifyContent='center'>
+ <Grid container spacing={{ xs: 2, sm: 3 }} justifyContent='center'>
         <Grid item xs={12} sm={5}>
           <TextField
             fullWidth
@@ -76,7 +81,8 @@ const ContactForm = () => {
             variant='filled'
             sx={{
               mt: 2,
-              width: { xs: '85vw', sm: '31.5vw' },
+              mx: { xs: 1, sm: 2 },
+              width: { xs: '85vw', sm: '41vw' },
               backgroundColor: 'white',
               borderRadius: 1,
             }}
@@ -96,7 +102,8 @@ const ContactForm = () => {
             variant='filled'
             sx={{
               mt: 2,
-              width: { xs: '85vw', sm: '31.5vw' },
+              mx: { xs: 1, sm: 2 },
+              width: { xs: '85vw', sm: '41vw' },
               backgroundColor: 'white',
               borderRadius: 1,
             }}
@@ -116,7 +123,8 @@ const ContactForm = () => {
             variant='filled'
             sx={{
               mt: 2,
-              width: { xs: '85vw', sm: '31.5vw' },
+              mx: { xs: 1, sm: 2 },
+              width: { xs: '85vw', sm: '41vw' },
               backgroundColor: 'white',
               borderRadius: 1,
             }}
@@ -139,8 +147,9 @@ const ContactForm = () => {
             rows={7.5}
             variant='filled'
             sx={{
-              mt: 2,
-              width: { xs: '85vw', sm: '31.5vw' },
+              mt: {xs: 0, sm:2},
+              mx: { xs: 1, sm: 2 },
+              width: { xs: '85vw', sm: '41vw' },
               backgroundColor: 'white',
               borderRadius: 1,
             }}
@@ -154,15 +163,17 @@ const ContactForm = () => {
           />
         </Grid>
       </Grid>
-      <CustomButton
-        variant='contained'
-        fullWidth
-        type='submit'
-        sx={{ mt: 3, mb: 3, width: 5 }}
-        disabled={submitting || formSubmitted} 
-      >
-        send
-      </CustomButton>
+      <Grid container justifyContent={{ xs: 'center' }} sx={{ my: 3 }}>
+  <CustomButton
+    variant='contained'
+    type='submit'
+    disabled={submitting || formSubmitted}
+ 
+  >
+    send
+  </CustomButton>
+</Grid>
+
       {formSubmitted && (
         <Typography color='#0e4c95' gutterBottom>
           Message sent successfully!
