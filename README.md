@@ -3,7 +3,7 @@
 
 Blue Cactus Horticulture brings sustainable beauty to Seattle's gardens, offering bespoke services from detailed pruning to full landscape installations.
 
-![Preview](./bluecactus/src/assets/img/Screenshot%20.png)
+![Preview](./src/assets/img/Screenshot%20.png)
 
 ## Table of Contents
 - [Live Demo](#live-demo)
