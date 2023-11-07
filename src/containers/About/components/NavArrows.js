@@ -52,6 +52,7 @@ const NavArrows = ({ onNext, onPrev }) => {
       justifyContent: 'space-between',
       zIndex: 2,
       pointerEvents: 'none',
+   
     }}>
       <IconButton
         onMouseEnter={() => setHoverPrev(true)}

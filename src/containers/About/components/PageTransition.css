@@ -26,7 +26,7 @@
 .slide-exit-active {
   transform: translateX(-100%);
   opacity: 0;
-  transition: opacity 300ms, transform 300ms;
+  transition: opacity 200ms, transform 200ms;
 }
 
 .slide-from-left-exit {
@@ -42,12 +42,12 @@
 
 .fade-in.title {
   opacity: 0;
-  transition: opacity 1200ms ease-in-out 300ms; 
+  transition: opacity 600ms ease-in-out 300ms; 
 }
 
 .fade-in.paragraph {
   opacity: 0;
-  transition: opacity 1200ms ease-in-out 900ms;
+  transition: opacity 800ms ease-in-out 900ms;
 }
 
 .slide-enter-done .fade-in.title,
