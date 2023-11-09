@@ -15,7 +15,7 @@ const CustomButton = styled(Button)`
   }
 `;
 
-const phoneRegExp = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
+// const phoneRegExp = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
 
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
@@ -25,7 +25,7 @@ const validationSchema = yup.object({
     .required('Email is required'),
   phone: yup
     .string()
-    .matches(phoneRegExp, 'Phone number is not valid')
+    // .matches(phoneRegExp, 'Phone number is not valid')
     .required('Phone number is required'),
   message: yup.string().required('Message is required'),
 });
