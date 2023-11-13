@@ -24,15 +24,22 @@ import img18 from './img/img18.jpg';
 import img19 from './img/img19.JPG';
 import img20 from './img/img1.jpg';
 import img21 from './img/img21.jpg';
+import img22 from './img/img22.jpg';
+import img23 from './img/img23.jpg';
+import img24 from './img/img24.jpg';
+import img26 from './img/img26.jpg';
+import img27 from './img/img27.jpg';
 
 const Gallery = () => {
   const images = [
     img1,
     img2,
+    img27,
     // img3,
     img4,
     img5,
     img6,
+    img23,
     img7,
     img8,
     img9,
@@ -41,12 +48,15 @@ const Gallery = () => {
     img12,
     img13,
     img14,
+    img22,
     img15,
     img16,
     img17,
     img18,
+    img24,
     img19,
     img20,
+    img26,
     img21,
   ];
 
@@ -57,7 +67,7 @@ const Gallery = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
   };
 
   return (
