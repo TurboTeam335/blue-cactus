@@ -14,7 +14,7 @@ Blue Cactus Horticulture brings sustainable beauty to Seattle's gardens, offerin
 
 ## Live Demo
 * [View Repository](https://github.com/TurboTeam335/blue-cactus)
-<!-- * [Launch Application]() -->
+* [Launch Application](https://bluecactushorticulture.com/)
 
 ## Features
 
