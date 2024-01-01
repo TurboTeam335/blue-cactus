@@ -50,9 +50,9 @@ const Follow = () => {
           follow us
         </Typography>
         <Box sx={{ display: 'flex', gap: 4, mb: 4 }}> 
-          <IconButton href="https://www.facebook.com" target="_blank">
+          {/* <IconButton href="https://www.facebook.com" target="_blank">
             <FacebookIcon sx={{ color: '#f3f2f2', fontSize: 30 }} />
-          </IconButton>
+          </IconButton> */}
           <IconButton href="https://www.instagram.com/bluecactushorticulture/" target="_blank">
             <InstagramIcon sx={{ color: '#f3f2f2', fontSize: 30 }} />
           </IconButton>

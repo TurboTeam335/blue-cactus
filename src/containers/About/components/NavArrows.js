@@ -45,7 +45,7 @@ const NavArrows = ({ onNext, onPrev }) => {
     <div className="nav-arrow"
     style={{ 
       position: 'absolute',
-      top:  isMobile ? '90%' :'142%',
+      top:  isMobile ? '53%' :'142%',
       left: '50%',
       transform:  'translate(-50%, -50%)',
       display: 'flex',

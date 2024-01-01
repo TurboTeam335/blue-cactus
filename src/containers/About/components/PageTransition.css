@@ -42,12 +42,12 @@
 
 .fade-in.title {
   opacity: 0;
-  transition: opacity 600ms ease-in-out 300ms; 
+  transition: opacity 600ms ease-in-out 200ms; 
 }
 
 .fade-in.paragraph {
   opacity: 0;
-  transition: opacity 800ms ease-in-out 900ms;
+  transition: opacity 500ms ease-in-out 700ms;
 }
 
 .slide-enter-done .fade-in.title,
